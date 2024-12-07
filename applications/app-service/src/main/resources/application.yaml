@@ -1,14 +1,38 @@
-##Spring Configuration
 server:
   port: 8080
 spring:
   application:
-    name: ms-constitution
+    name: "ms-constitution"
   devtools:
     add-properties: false
   h2:
     console:
       enabled: true
-      path: /h2
+      path: "/h2"
   profiles:
-    include:
+    include: null
+
+aws:
+  region: ${REGION:us-east-1}
+  localstack:
+    enabled: true # Cambia a false si no usas LocalStack
+    endpoint: ${ENDPOINT:http://localhost:4566}
+    access-key: ${LOCAL_ACCESS_KEY:localAccessKey}
+    secret-key: ${LOCAL_ACCES_SECRET_KEY:localSecretKey}
+  credentials:
+    access-key: ${ACCES_KEY:yourAwsAccessKey}
+    secret-key: ${SECRET_KEY:yourAwsSecretKey}
+
+commons:
+  jms:
+    input-concurrency: 10
+    input-queue: "DEV.QUEUE.1"
+    input-queue-alias: ""
+    reactive: true
+ibm:
+  mq:
+    channel: "DEV.APP.SVRCONN"
+    user: "app"
+    secret-ibm: ${LOCAL_ACCES_SECRET_IBM:localSecretIbm}
+    ccdt: "applications/app-service/src/main/resources/ccdt.json"
+

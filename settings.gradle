@@ -14,3 +14,9 @@ include ':usecase'
 project(':app-service').projectDir = file('./applications/app-service')
 project(':model').projectDir = file('./domain/model')
 project(':usecase').projectDir = file('./domain/usecase')
+include ':mq-listener'
+project(':mq-listener').projectDir = file('./infrastructure/entry-points/mq-listener')
+include ':ibmmq'
+project(':ibmmq').projectDir = file('./infrastructure/helpers/ibmmq')
+include ':secretmanager'
+project(':secretmanager').projectDir = file('./infrastructure/helpers/secretmanager')
