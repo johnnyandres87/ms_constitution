@@ -1,0 +1,7 @@
+{
+	"user": "app",
+	"password": "passw0rd",
+	"trustStorePass": "abdcef",
+	"qmGroup": "QM1",
+	"InputQueueListener": "DEV.QUEUE.1"
+}
